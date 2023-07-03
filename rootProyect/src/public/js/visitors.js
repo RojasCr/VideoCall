@@ -24,7 +24,7 @@ myPeer.on("connection", (conn) => {
 })
 
 const constraints = {
-    video: true,
+    video: false,
     audio: true
 }
 
