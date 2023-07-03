@@ -6,8 +6,8 @@ const router = Router();
 
 
 router.get("/", (req, res) => {
-    res.send("hola")
-    //res.sendFile(`${process.cwd()}/src/public/views/home.html`)
+    //res.send("hola")
+    res.sendFile(`${process.cwd()}/src/public/views/home.html`)
 });
 
 router.get("/chat", (req, res) => {
