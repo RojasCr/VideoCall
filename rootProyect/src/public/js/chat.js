@@ -17,7 +17,7 @@ myPeer.on("open", (id) => {
 
 const constraints = {
     video: true,
-    audio: true
+    audio: false
 }
 
 socket.on("userId", id => {
