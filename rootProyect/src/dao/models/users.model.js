@@ -11,6 +11,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    userName: {
+        type: String,
+        unique: true,
+        required: true
+    },
     email: {
         type: String,
         unique: true,
@@ -28,12 +33,6 @@ const userSchema = new mongoose.Schema({
         contentType: String,
         image: Buffer
     },
-    posts: [
-        {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "posts"
-        }
-    ]
 })
 
 
@@ -41,4 +40,4 @@ const usersModel = mongoose.model(usersCollection, userSchema);
 
 
 
-//module.exports = usersModel;
+module.exports = usersModel;

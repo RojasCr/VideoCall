@@ -1,53 +1,44 @@
 var socket = io("/");
 const videoRecep = document.getElementById("videoRecep");
+const stopBtn = document.getElementById("stopBtn");
 
-var myPeer = new Peer(undefined, {
-    /*host: "/",
-    port: "8081",*/
-})
+var myPeer = new Peer(undefined, {})
 
 myPeer.on("open", (id) => {
     socket.emit("join", id);
     console.log('My peer ID is: ' + id);
 });
 
-myPeer.on("connection", (conn) => {
-
-    conn.on("open", () => {
-        conn.send("hola de nuevo")
-        conn.on("data", (data) => {
-            console.log(data)
-        })
-
-    })
-    
+socket.on("notAllowed", data => {
+    window.alert(data);
+    return window.location.href = "/profile";
 })
 
-const constraints = {
-    video: true,
-    audio: false
-}
+socket.on("videoEnded", data => {
+    window.alert(data);
+    return window.location.href = "/profile";
+})
 
 myPeer.on("call", (call) => {
-    const acepted = confirm("¿Aceptas la llamada?")
-
-    if(acepted){
-        navigator.mediaDevices.getUserMedia(constraints)
-        .then(visitorStream => {
-
     
-        
-        
-            const video = document.getElementById("videoRender");
-            video.srcObject = visitorStream;
-            call.answer(visitorStream)
-            call.on("stream", stream => {
-                //const newStream = new Blob([stream])
-                videoRecep.srcObject = stream;
-                //console.log(newStream)
-                //console.log(stream.getTracks())
-    
-            })  
-        })
-    }    //console.log(call)
+    const constraints = {
+        video: true,
+        audio: false
+    }
+    navigator.mediaDevices.getUserMedia(constraints)
+    .then(visitorStream => {
+
+        call.answer();
+        call.on("stream", stream => {
+            videoRecep.srcObject = stream;
+        })  
+    })
+})
+
+stopBtn.addEventListener("click", () => {
+    const stay = window.confirm("¿Seguro que deseas salir?");
+
+    if(stay){
+        return window.location.href = "/profile";
+    }
 })

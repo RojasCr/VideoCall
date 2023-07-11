@@ -6,17 +6,18 @@ const router = Router();
 
 
 router.get("/", (req, res) => {
-    //res.send("hola")
-    res.sendFile(`${process.cwd()}/src/public/views/home.html`)
+    res.sendFile(`${process.cwd()}/src/public/views/login.html`)
 });
 
-router.get("/chat", (req, res) => {
-    //res.send("hola")
+router.get("/profile", (req, res) => {
+    res.sendFile(`${process.cwd()}/src/public/views/profile.html`)
+});
+
+router.get("/streams", (req, res) => {
     res.sendFile(`${process.cwd()}/src/public/views/chat.html`)
 });
 
 router.get("/visitors", (req, res) => {
-    //res.send("hola")
     res.sendFile(`${process.cwd()}/src/public/views/visitors.html`)
 });
 

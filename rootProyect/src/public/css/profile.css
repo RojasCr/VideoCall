@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(167, 111, 251, 0.3), rgba(167, 111, 251, 1));
+    
+}
+
+header{
+    height: 10%;
+    text-align: center;
+}
+
+.card-container{
+    display: flex;
+    height: 90%;
+    width: 100%;
+}
+
+.liveStream, .viewStream{
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+.card-container a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.img-container{
+    height: 90%;
+    width: 50%;
+    position: absolute;
+}
+
+.img-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.btn{
+    position: relative;
+    z-index: 2;
+}

@@ -1,11 +1,11 @@
 const indexController = require("../controllers/index.controller")
-const userController = require("../controllers/users/users.controller")
-const postController = require("../controllers/posts/posts.controller")
+const authController = require("../auth/auth.controller");
+const usersCrontroller = require("../controllers/users.controller")
 
 const router = (app) => {
-    app.use("/", indexController)
-    /*app.use("/user", userController)
-    app.use("/post", postController)*/
+    app.use("/", indexController);
+    app.use("/auth", authController);
+    app.use("/api/users", usersCrontroller)
 }
 
 module.exports = router;

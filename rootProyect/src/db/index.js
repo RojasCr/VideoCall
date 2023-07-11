@@ -9,4 +9,4 @@ const mongoConnect = () => {
     .catch(err => console.log(err))
 }
 
-//module.exports = mongoConnect;
+module.exports = mongoConnect;
