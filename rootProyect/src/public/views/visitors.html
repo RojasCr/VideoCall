@@ -10,18 +10,19 @@
 </head>
 <body>
     <main>
+        <div id="cont"></div>
         <article id="emisor-container">
             <div class="video-container">
                 <video src="" id="videoRecep" autoplay></video>
             </div>
             <div class="btn-container">
                 <button class="btn btn-primary" id="stopBtn">Salir</button>
-                <!-- <button class="btn btn-secondary" id="stopBtn">Colgar</button> -->
+                
             </div>
         </article>
     </main>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/visitors.js"></script>
