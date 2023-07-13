@@ -1,4 +1,4 @@
-const Users = require("./models/users.model");
+const Users = require("../models/users.model");
 
 class UsersMongoDao{
     constructor(){}
@@ -32,7 +32,7 @@ class UsersMongoDao{
 
     updateOne = async (filter, update) => {
         try {
-            const userUpdated = await Users.updateOne({filter}, {update});
+            const userUpdated = await Users.updateOne({email: filter}, update);
             return userUpdated;
         } catch (error) {
             throw new Error(error)

@@ -47,7 +47,7 @@ header{
     position: absolute;
 }
 
-.img-container img{
+a img{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -57,4 +57,23 @@ header{
 .btn{
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 600px) {
+    .card-container{
+        flex-direction: column;
+        width: 100%;
+        height: 90%;
+    }
+    
+    .liveStream, .viewStream{
+        width: 100%;
+        height: 50%;
+        
+    }
+
+    .img-container{
+        height: 45%;
+        width: 100%;
+    }
 }

@@ -28,7 +28,7 @@ loginForm.addEventListener("submit", (e) => {
         return response.json()
     })
     .then(data => console.log(data))
-    .then(err => console.log(err))
+    .catch(err => console.log(err))
 
     //console.log(obj);
 })

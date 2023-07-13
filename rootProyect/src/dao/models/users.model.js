@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+const { hashPass } = require("../../../utils/bcrypt.utils");
 
 const usersCollection = "users";
 
 const userSchema = new mongoose.Schema({
+    googleId: String,
     name: {
         type: String,
         required: true
@@ -13,8 +15,7 @@ const userSchema = new mongoose.Schema({
     },
     userName: {
         type: String,
-        unique: true,
-        required: true
+        unique: true
     },
     email: {
         type: String,
@@ -23,7 +24,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        //required: true
     },
     phoneNumber: {
         type: Number,
@@ -34,6 +35,13 @@ const userSchema = new mongoose.Schema({
         image: Buffer
     },
 })
+
+userSchema.pre("save", function(next) {
+    this.password = hashPass(this.password);
+    //console.log(this)
+    next();
+})
+
 
 
 const usersModel = mongoose.model(usersCollection, userSchema);

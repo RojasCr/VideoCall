@@ -1,9 +1,8 @@
-require("dotenv").config()
+require("dotenv").config({
+    path: `${process.cwd()}/.env.${process.env.NODE_ENV}`
+})
 
 module.exports = {
     PORT: process.env.PORT || 3000,
-    dbUser: process.env.DB_USER,
-    dbPassword: process.env.DB_PASSWORD,
-    dbHost: process.env.DB_HOST,
-    dbName: process.env.DB_NAME
+    PERSISTENCE: process.env.PERSISTENCE /*|| "mongoDB"*/
 }

@@ -1,5 +1,5 @@
 const { mongoose } = require("mongoose");
-const { dbUser, dbPassword, dbHost, dbName } = require("../config/app.config");
+const { dbUser, dbPassword, dbHost, dbName } = require("../config/db.config");
 
 const mongoConnect = () => {
     mongoose.connect(

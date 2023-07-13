@@ -1,5 +1,3 @@
-
-
 class UsersRepository{
     
     constructor(dao){
@@ -35,7 +33,7 @@ class UsersRepository{
 
     updateOne = async (filter, update) => {
         try {
-            const userUpdated = await this.dao.updateOne({filter}, {update});
+            const userUpdated = await this.dao.updateOne(filter, update);
             return userUpdated;
         } catch (error) {
             throw new Error(error)
