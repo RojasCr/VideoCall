@@ -76,15 +76,8 @@ main{
 }
 
 .btn-google, .btn-facebook{
-    /* background: #E93F2E; */
-    /* height: min-content; */
     width: 5vh;
     cursor: pointer;
-    /* border-radius: 3%; */
-    /* border-color: #e67272; */
-    /*border-width: 1px;
-    border-style: solid;
-    border-color: #b72213; */
 }
 
 @media (max-width: 600px){

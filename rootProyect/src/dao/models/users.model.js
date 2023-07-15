@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const { hashPass } = require("../../../utils/bcrypt.utils");
+const { hashPass } = require(`${process.cwd()}/src/utils/bcrypt.utils`);
 
 const usersCollection = "users";
 
 const userSchema = new mongoose.Schema({
     googleId: String,
-    name: {
+    firstName: {
         type: String,
         required: true
     },
@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         unique: true,
+        required: true
+    },
+    age: {
+        type: Number,
         required: true
     },
     password: {
@@ -42,10 +46,6 @@ userSchema.pre("save", function(next) {
     next();
 })
 
-
-
 const usersModel = mongoose.model(usersCollection, userSchema);
-
-
 
 module.exports = usersModel;

@@ -18,7 +18,9 @@ router.post("/", async (req, res) => {
 
         const newUser = await Users.create(newUserDto);
 
-        return res.status(200).json({status: "success", payload: newUser})
+        const userDto = UsersDto.info(newUser);
+        
+        return res.status(200).cookie("user", userDto, {httpOnly: true, secure: true}).redirect("/dashboard");
     } catch (error) {
         throw new Error(error);
     }

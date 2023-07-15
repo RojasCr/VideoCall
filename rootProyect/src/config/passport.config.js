@@ -4,7 +4,7 @@ const google = require("passport-google-oauth20");
 
 const Users = require("../repositories/index");
 const { googleClientId, googleClientSecret, googleCallBackUrl } = require("./google.config");
-const { comparePass } = require("../../utils/bcrypt.utils");
+const { comparePass } = require(`${process.cwd()}/src/utils/bcrypt.utils`);
 
 const LocalStrategy = local.Strategy;
 const GoogleStrategy = google.Strategy;

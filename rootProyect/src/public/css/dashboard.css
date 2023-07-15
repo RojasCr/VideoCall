@@ -1,0 +1,161 @@
+*{
+    margin: 0px 0px;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(167, 111, 251, 0.3), rgba(167, 111, 251, 1));
+}
+
+header{
+    display: flex;
+    height: 5%;
+    width: 85%;
+    justify-content: flex-end;
+    background-color: aliceblue;
+}
+
+/* .img-container{
+    width: 2%;
+    height: 2%;
+} */
+
+header img{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+
+header span{
+    display: flex;
+    font-size:x-small;
+    align-items: center;
+
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    padding: 1%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 15%;
+    background-color: rgb(171, 131, 232);
+}
+
+.img-container{
+    display: flex;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container h2{
+    margin: 0;
+    
+}
+
+aside img{
+    height: 100%;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+aside nav{
+    height: 50%;
+}
+
+nav ul{
+    height: 100%;
+    list-style: none;
+}
+
+ul li{
+    height: 50%;
+    background-color: rgb(171, 131, 232);
+    transition: all 500ms ease-in-out;
+}
+
+ul li:hover{
+    /* border: 1px solid rgb(146, 88, 234); */
+    translate: 20px;
+    
+    /* animation: menu 500ms ease-in-out forwards; */
+}
+
+ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+#card-container{
+    padding: 1%;
+    height: 95%;
+    width: 85%;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+#card-container .card{
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+    width: 30%;
+    border: solid 1px black;
+}
+
+.card img{
+    width: 50%;
+    height: 100%;
+}
+
+.card-info{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    font-size: x-large;
+}
+
+.video-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.video-container video{
+    object-fit: cover;
+    width: 90%;;
+}
