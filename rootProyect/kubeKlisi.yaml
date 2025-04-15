@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeservice
+spec:
+  selector:
+    app: kubeklisi
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeklisi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubeklisi
+  template:
+    metadata:
+      labels:
+        app: kubeklisi
+    spec:
+      containers:
+        - name: kubecontainer
+          image: cristianro/my_first_repo:videocall
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
